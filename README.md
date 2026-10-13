@@ -4,14 +4,14 @@ Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The 
 
 | Plugin | Contents |
 |---|---|
-| `pstack-starter` | `/pstack` with the Feature, Babysit, and Shipping playbooks, the `how`, `architect`, `arena`, and `interrogate` skills Feature uses, the `/teach` skill, and the 17 principles they need. The first level of the course. |
+| `pstack-starter` | `/pstack` with the Feature, Babysit, and Shipping playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `/teach` skill, and the 17 principles they need. The first level of the course. |
 
 ## pstack-starter
 
 `pstack-starter` is a harness-agnostic port of part of [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan, taken from upstream commit `1dcc2ba`.
 
 - `plugins/pstack-starter/skills/pstack` is the single entry point, upstream's `/poteto-mode` renamed and trimmed to this level. It routes each task to a playbook in `skills/pstack/playbooks/` and grounds every decision in the principles.
-- `plugins/pstack-starter/skills/how`, `architect`, `arena`, and `interrogate` are the skills the Feature playbook uses.
+- `plugins/pstack-starter/skills/how`, `why`, `architect`, `arena`, and `interrogate` are the skills the Feature playbook uses. `why` searches git history, pull requests, and GitHub Issues.
 - `plugins/pstack-starter/skills/teach` explains a body of work so a person understands it. Invoke it with `/teach`.
 - `plugins/pstack-starter/skills/principle-*` holds the 17 principles those skills and playbooks cite.
 

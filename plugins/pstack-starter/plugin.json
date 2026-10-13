@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pstack-starter",
   "version": "0.1.0",
-  "description": "Starter level of pstack: the /pstack entry point with the Feature playbook, the how, architect, arena, and interrogate skills it uses, the teach skill, and their 17 principles.",
+  "description": "Starter level of pstack: the /pstack entry point with the Feature playbook, the how, why, architect, arena, and interrogate skills it uses, the teach skill, and their 17 principles.",
   "author": {
     "name": "DevTK0"
   },

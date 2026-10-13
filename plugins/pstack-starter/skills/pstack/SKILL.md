@@ -69,11 +69,10 @@ If the harness has no subagents, run each delegated step yourself in sequence an
 
 ## Workflows
 
-The playbooks route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), and **interrogate** (`../interrogate/SKILL.md`). Read the skill in full before you run it.
+The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), and **why** (`../why/SKILL.md`). Read the skill in full before you run it.
 
 The workflows below are defined here, not as separate skills. If the harness has a skill with the same name and purpose installed, prefer it.
 
-- **why.** Recover the rationale behind a design, a regression, or a threshold. Query every evidence source the harness can reach in parallel (git history and blame, PRs and review threads, the issue tracker, docs, chat, observability, error tracking) and return a cited read on the decisions and tradeoffs. Label each claim as evidenced or inferred.
 - **unslop.** Cut AI tells from any prose. No em dashes. No colon as a mid-sentence connector. No AI vocabulary (delve, crucial, pivotal, showcase, underscore, leverage, utilize). No "serves as" for "is", no "not just X, but Y", no forced groups of three, no synonym cycling. No chatbot phrases, sycophancy, filler, stacked hedges, or generic conclusions. No abstract metaphor nouns or mannered flourishes. Sentence-case headings, straight quotes, no decorative emoji. Active voice, plain words, whole sentences with their articles and verbs. Say what the thing does, with a mechanism or a number, not how it feels.
 - **show-me-your-work.** Keep one append-only TSV decision log with columns `ts`, `phase`, `decision`, `why`, `evidence`, `result`. One single-line row per decision point or loop iteration. Evidence is a pointer (SHA, PR, `file:line`, artifact path), never prose. Keep it at `decisions.tsv` in the work dir, out of git, unless a reviewer needs the trail to trust the result. A wrong call gets a superseding row, never an edit.
 
