@@ -34,23 +34,6 @@ codex plugin add pstack-starter@aixtech-skills
 
 Any other harness: copy or symlink every directory under `plugins/pstack-starter/skills/` into the harness's skills directory. Keep them as siblings, because `pstack` reads the other skills and the principles at `../<name>/SKILL.md`.
 
-## Differences from upstream
-
-- Only the Feature, Babysit, and Shipping playbooks are included. The Feature playbook's last step pushes and opens a PR instead of running the Opening a PR playbook.
-- `how`, `architect`, `arena`, and `interrogate` are ported in full with their `references/` files. `why`, `unslop`, and `show-me-your-work` are short inline workflows in the **Workflows** section of `skills/pstack/SKILL.md`.
-- Cursor-specific mechanics are replaced with neutral wording or removed. `poteto-agent`, the `Task` tool, `AskQuestion`, `/setup-pstack` model lines, and `agent-transcripts/` are reworded. Cloud agents, UI-testing control skills (`control-ui`, `control-cli`), `/loop`, the Origin forge, and Bugbot are removed.
-- Babysit and Shipping use `gh` as the only forge. Babysit's sentences about the Autopilot playbooks are removed. Upstream's `watch-pr` script is removed, so the playbooks describe what to wait for and the agent does the watching itself.
-- `references/code-review-triage.md` is upstream's `bugbot-triage.md`, rewritten for any code reviewer, bot or person.
-- `principle-prove-it-works` points at the `show-me-your-work` workflow in `skills/pstack/SKILL.md` instead of a separate skill. The other principles are verbatim.
-
-## Checking the plugin
-
-```sh
-python3 scripts/check-plugins.py
-```
-
-It fails when a plugin references a principle, skill, playbook, workflow, `references/` path, or relative link that the plugin does not include, or when a plugin is missing from either marketplace file.
-
 ## License
 
 MIT. See `LICENSE`. The upstream copyright belongs to Lauren Tan.
