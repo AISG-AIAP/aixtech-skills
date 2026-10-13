@@ -70,7 +70,7 @@ If the harness has no subagents, run each delegated step yourself in sequence an
 
 ## Workflows
 
-The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), **why** (`../why/SKILL.md`), **unslop** (`../unslop/SKILL.md`), and **technical-writing** (`../technical-writing/SKILL.md`). Read the skill in full before you run it.
+The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), **why** (`../why/SKILL.md`), **unslop** (`../unslop/SKILL.md`), **technical-writing** (`../technical-writing/SKILL.md`), and **blast-radius** (`../blast-radius/SKILL.md`). Read the skill in full before you run it.
 
 The workflows below are defined here, not as separate skills. If the harness has a skill with the same name and purpose installed, prefer it.
 
