@@ -1,0 +1,16 @@
+{
+  "name": "aixtech-skills",
+  "owner": {
+    "name": "DevTK0"
+  },
+  "metadata": {
+    "description": "Agent skills for aixtech: the pstack starter."
+  },
+  "plugins": [
+    {
+      "name": "pstack-starter",
+      "source": "./plugins/pstack-starter",
+      "description": "pstack starter: the Feature playbook with the skills and principles it uses."
+    }
+  ]
+}

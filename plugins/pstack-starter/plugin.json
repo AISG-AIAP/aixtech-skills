@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pstack-starter",
+  "version": "0.1.0",
+  "description": "Starter level of pstack: the /pstack entry point with the Feature playbook, the how, architect, arena, and interrogate skills it uses, and their 17 principles.",
+  "author": {
+    "name": "DevTK0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop"
+  ]
+}
