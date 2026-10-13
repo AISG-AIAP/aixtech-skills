@@ -5,7 +5,7 @@ Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The 
 | Plugin | Contents |
 |---|---|
 | `pstack-starter` | `/pstack` with the Feature, Babysit, and Shipping playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `/teach` and `/unslop` skills, and the 17 principles they need. The first level of the course. |
-| `pstack-practitioner` | Everything in `pstack-starter`, plus the Bug fix and Prototype playbooks, the `tdd` skill, and the `/create-verification-skill` and `/maintain-verification-skill` skills. The second level. |
+| `pstack-practitioner` | Everything in `pstack-starter`, plus the Investigation, Bug fix, and Prototype playbooks, the `tdd` skill, and the `/create-verification-skill` and `/maintain-verification-skill` skills. The second level. |
 
 ## pstack-starter
 
@@ -24,6 +24,7 @@ Invoke it with `/pstack` in Claude Code (`/pstack-starter:pstack` also works). C
 `pstack-practitioner` contains everything in `pstack-starter` and adds:
 
 - The Bug fix and Prototype playbooks. Both drive the app through the project's verification skill.
+- The Investigation playbook, for read-only questions answered from `how` and `why` with citations.
 - `tdd`, which Bug fix uses to land a failing test before the fix when the test is cheap.
 - `create-verification-skill`, which writes a project-local skill at `.agents/skills/verify-<app>/` that launches the app, drives it the way a user does, and captures evidence.
 - `maintain-verification-skill`, which audits that skill and its feature map against the current app.
