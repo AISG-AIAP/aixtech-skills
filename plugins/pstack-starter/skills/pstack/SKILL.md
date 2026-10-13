@@ -18,7 +18,7 @@ Remaining triggers:
 - Code crossing a function boundary → the **architect** skill, parallel design exploration before implementing.
 - Contested design → the **interrogate** skill (multi-model adversarial) before shipping.
 - Nontrivial multi-step → write the throughput checkpoint (Feature step 3).
-- Any prose surface, your reply to the user included → the **unslop** workflow. Write the reply per **Writing the reply**.
+- Any prose surface, your reply to the user included → the **unslop** skill. Write the reply per **Writing the reply**.
 - Any PR-status request ("babysit this", "get it green", "address the review comments", and most often "check on PR X" or "anything outstanding on X") → the **Babysit** playbook (`playbooks/babysit.md`), not a built-in babysit skill the harness may have, whose description matches the same words. Never triggered by merely opening a PR. Declare its mode before polling. The playbook's step 1 owns the request-to-mode mapping. Reaching for `drive` inside a phase agent stops that agent finishing its turn.
 - Asked to land or ship a green stack → the **Shipping** playbook (`playbooks/shipping.md`). Green is not safe. Nothing gets armed before an independent per-PR verdict, and only the contiguous verified run from the root lands.
 - Code review comments arrived, from a review bot or a person → skeptical posture. Reviewers catch real bugs and also file non-issues and nitpicks, so assess each on its merits and dismiss noise with a concrete reason instead of churning code. Triage fix / dismiss / ask per `references/code-review-triage.md`.
@@ -69,11 +69,10 @@ If the harness has no subagents, run each delegated step yourself in sequence an
 
 ## Workflows
 
-The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), and **why** (`../why/SKILL.md`). Read the skill in full before you run it.
+The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), **why** (`../why/SKILL.md`), and **unslop** (`../unslop/SKILL.md`). Read the skill in full before you run it.
 
 The workflows below are defined here, not as separate skills. If the harness has a skill with the same name and purpose installed, prefer it.
 
-- **unslop.** Cut AI tells from any prose. No em dashes. No colon as a mid-sentence connector. No AI vocabulary (delve, crucial, pivotal, showcase, underscore, leverage, utilize). No "serves as" for "is", no "not just X, but Y", no forced groups of three, no synonym cycling. No chatbot phrases, sycophancy, filler, stacked hedges, or generic conclusions. No abstract metaphor nouns or mannered flourishes. Sentence-case headings, straight quotes, no decorative emoji. Active voice, plain words, whole sentences with their articles and verbs. Say what the thing does, with a mechanism or a number, not how it feels.
 - **show-me-your-work.** Keep one append-only TSV decision log with columns `ts`, `phase`, `decision`, `why`, `evidence`, `result`. One single-line row per decision point or loop iteration. Evidence is a pointer (SHA, PR, `file:line`, artifact path), never prose. Keep it at `decisions.tsv` in the work dir, out of git, unless a reviewer needs the trail to trust the result. A wrong call gets a superseding row, never an edit.
 
 ## Writing the reply
@@ -82,7 +81,7 @@ Write the reply clean as you draft it. A cleanup pass after drafting does not re
 
 - **Short declarative sentences.** One thought per sentence, ended with a period.
 - **No long-dash character anywhere.** Write a file-list bullet as a sentence ("`main.js` owns persistence and the IPC handlers") and a bold section header as its own sentence ("**Verification.** End to end via CDP").
-- **A colon as a mid-sentence connector is also out** (see **unslop**). A colon before a list is fine.
+- **A colon as a mid-sentence connector is also out** (unslop rule 14). A colon before a list is fine.
 - **Terse is not an excuse to drop content.** Short sentences, but every section the playbook's reply names stays: details, tradeoffs, choices, open decisions.
 - **Frame impact for the consumer and the maintainer.** Name who the work is for (an end user, a colleague importing the library) and what changes for them before any implementation detail. Then what the next engineer who owns this code inherits. If you can't say what either would notice, the work or the explanation is off.
 - **Never fabricate a link, citation, or transcript reference.** Link only artifacts you produced or read this session.
