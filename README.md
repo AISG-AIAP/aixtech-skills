@@ -5,6 +5,7 @@ Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The 
 | Plugin | Contents |
 |---|---|
 | `pstack-starter` | `/pstack` with the Feature, Babysit, and Shipping playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `/teach` and `/unslop` skills, and the 17 principles they need. The first level of the course. |
+| `pstack-practitioner` | Everything in `pstack-starter`, plus the Bug fix and Prototype playbooks, the `tdd` skill, and the `/create-verification-skill` and `/maintain-verification-skill` skills. The second level. |
 
 ## pstack-starter
 
@@ -18,6 +19,17 @@ Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The 
 
 Invoke it with `/pstack` in Claude Code (`/pstack-starter:pstack` also works). Codex prefixes plugin skills with the plugin name, so there it is `$pstack-starter:pstack`.
 
+## pstack-practitioner
+
+`pstack-practitioner` contains everything in `pstack-starter` and adds:
+
+- The Bug fix and Prototype playbooks. Both drive the app through the project's verification skill.
+- `tdd`, which Bug fix uses to land a failing test before the fix when the test is cheap.
+- `create-verification-skill`, which writes a project-local skill at `.agents/skills/verify-<app>/` that launches the app, drives it the way a user does, and captures evidence.
+- `maintain-verification-skill`, which audits that skill and its feature map against the current app.
+
+Invoke it with `/pstack` in Claude Code. In Codex it is `$pstack-practitioner:pstack`.
+
 ## Install
 
 Claude Code:
@@ -25,6 +37,9 @@ Claude Code:
 ```sh
 claude plugin marketplace add AISG-AIAP/aixtech-skills
 claude plugin install pstack-starter@aixtech-skills
+# next level
+claude plugin uninstall pstack-starter@aixtech-skills
+claude plugin install pstack-practitioner@aixtech-skills
 ```
 
 Codex:
@@ -32,9 +47,12 @@ Codex:
 ```sh
 codex plugin marketplace add AISG-AIAP/aixtech-skills
 codex plugin add pstack-starter@aixtech-skills
+# next level
+codex plugin remove pstack-starter@aixtech-skills
+codex plugin add pstack-practitioner@aixtech-skills
 ```
 
-Any other harness: copy or symlink every directory under `plugins/pstack-starter/skills/` into the harness's skills directory. Keep them as siblings, because `pstack` reads the other skills and the principles at `../<name>/SKILL.md`.
+Any other harness: copy or symlink every directory under one plugin's `skills/` folder into the harness's skills directory. Keep them as siblings, because `pstack` reads the other skills and the principles at `../<name>/SKILL.md`.
 
 ## License
 

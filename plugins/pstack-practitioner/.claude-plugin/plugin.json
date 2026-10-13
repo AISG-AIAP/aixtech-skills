@@ -1,0 +1,17 @@
+{
+  "name": "pstack-practitioner",
+  "version": "0.1.0",
+  "description": "Practitioner level of pstack: the /pstack entry point with the Feature, Babysit, Shipping, Bug fix, and Prototype playbooks, the how, why, architect, arena, interrogate, and tdd skills they use, the create-verification-skill and maintain-verification-skill skills, the teach and unslop skills, and their 17 principles.",
+  "author": {
+    "name": "DevTK0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop"
+  ]
+}

@@ -4,13 +4,18 @@
     "name": "DevTK0"
   },
   "metadata": {
-    "description": "Agent skills for aixtech: the pstack starter."
+    "description": "Agent skills for aixtech: pstack levels for the course."
   },
   "plugins": [
     {
       "name": "pstack-starter",
       "source": "./plugins/pstack-starter",
       "description": "pstack starter: the Feature playbook with the skills and principles it uses."
+    },
+    {
+      "name": "pstack-practitioner",
+      "source": "./plugins/pstack-practitioner",
+      "description": "pstack practitioner: Bug fix, Prototype, and verification skills on top of the starter."
     }
   ]
 }
