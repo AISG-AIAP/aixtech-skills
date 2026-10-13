@@ -4,7 +4,7 @@ Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The 
 
 | Plugin | Contents |
 |---|---|
-| `pstack-starter` | `/pstack` with the Feature, Babysit, and Shipping playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `/teach` and `/unslop` skills, and the 17 principles they need. The first level of the course. |
+| `pstack-starter` | `/pstack` with the Feature, Babysit, Shipping, and Opening a PR playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `technical-writing` skill Opening a PR uses, the `/teach` and `/unslop` skills, and the 17 principles they need. The first level of the course. |
 | `pstack-practitioner` | Everything in `pstack-starter`, plus the Investigation, Bug fix, and Prototype playbooks, the `tdd` skill, and the `/create-verification-skill` and `/maintain-verification-skill` skills. The second level. |
 
 ## pstack-starter

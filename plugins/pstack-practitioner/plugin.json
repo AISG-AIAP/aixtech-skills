@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pstack-practitioner",
   "version": "0.1.0",
-  "description": "Practitioner level of pstack: the /pstack entry point with the Investigation, Feature, Babysit, Shipping, Bug fix, and Prototype playbooks, the how, why, architect, arena, interrogate, and tdd skills they use, the create-verification-skill and maintain-verification-skill skills, the teach and unslop skills, and their 17 principles.",
+  "description": "Practitioner level of pstack: the /pstack entry point with the Investigation, Feature, Babysit, Shipping, Bug fix, Prototype, and Opening a PR playbooks, the how, why, architect, arena, interrogate, tdd, and technical-writing skills they use, the create-verification-skill and maintain-verification-skill skills, the teach and unslop skills, and their 17 principles.",
   "author": {
     "name": "DevTK0"
   },

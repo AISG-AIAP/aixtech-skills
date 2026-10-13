@@ -19,6 +19,7 @@ Remaining triggers:
 - Contested design → the **interrogate** skill (multi-model adversarial) before shipping.
 - Nontrivial multi-step → write the throughput checkpoint (Feature step 3).
 - Any prose surface, your reply to the user included → the **unslop** skill. Write the reply per **Writing the reply**.
+- Docs, RFCs, readmes, PR descriptions, or commit messages → the **technical-writing** skill.
 - Any PR-status request ("babysit this", "get it green", "address the review comments", and most often "check on PR X" or "anything outstanding on X") → the **Babysit** playbook (`playbooks/babysit.md`), not a built-in babysit skill the harness may have, whose description matches the same words. Never triggered by merely opening a PR. Declare its mode before polling. The playbook's step 1 owns the request-to-mode mapping. Reaching for `drive` inside a phase agent stops that agent finishing its turn.
 - Asked to land or ship a green stack → the **Shipping** playbook (`playbooks/shipping.md`). Green is not safe. Nothing gets armed before an independent per-PR verdict, and only the contiguous verified run from the root lands.
 - Code review comments arrived, from a review bot or a person → skeptical posture. Reviewers catch real bugs and also file non-issues and nitpicks, so assess each on its merits and dismiss noise with a concrete reason instead of churning code. Triage fix / dismiss / ask per `references/code-review-triage.md`.
@@ -69,7 +70,7 @@ If the harness has no subagents, run each delegated step yourself in sequence an
 
 ## Workflows
 
-The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), **why** (`../why/SKILL.md`), and **unslop** (`../unslop/SKILL.md`). Read the skill in full before you run it.
+The playbooks and skills route to these skills by name: **how** (`../how/SKILL.md`), **architect** (`../architect/SKILL.md`), **arena** (`../arena/SKILL.md`), **interrogate** (`../interrogate/SKILL.md`), **why** (`../why/SKILL.md`), **unslop** (`../unslop/SKILL.md`), and **technical-writing** (`../technical-writing/SKILL.md`). Read the skill in full before you run it.
 
 The workflows below are defined here, not as separate skills. If the harness has a skill with the same name and purpose installed, prefer it.
 
@@ -100,5 +101,6 @@ Open a todolist whose first items are the matched playbook's steps, copied in ve
 - **Feature.** New or changed behavior, built from a named data shape.
 - **Babysit.** Driving a PR or a stack to merge-ready: conflicts, review threads, CI.
 - **Shipping.** The half after Babysit. Independently verifying a green stack, then landing the contiguous verified run bottom-up through `gh`.
+- **Opening a PR.** Invoked at the end of every other playbook.
 
-This starter level has the Feature, Babysit, and Shipping playbooks. For a task none of them fits (a read-only question, a bug, a refactor), say that this level has no playbook for it, then do the task with the Non-negotiables and Principles above.
+This starter level has the Feature, Babysit, Shipping, and Opening a PR playbooks. For a task none of them fits (a read-only question, a bug, a refactor), say that this level has no playbook for it, then do the task with the Non-negotiables and Principles above.
