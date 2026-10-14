@@ -16,6 +16,11 @@
       "name": "pstack-practitioner",
       "source": "./plugins/pstack-practitioner",
       "description": "pstack practitioner: Bug fix, Prototype, and verification skills on top of the starter."
+    },
+    {
+      "name": "pstack-expert",
+      "source": "./plugins/pstack-expert",
+      "description": "pstack expert: refactoring, performance, long-running work, and skill authoring on top of the practitioner level."
     }
   ]
 }

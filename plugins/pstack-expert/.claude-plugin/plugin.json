@@ -1,0 +1,17 @@
+{
+  "name": "pstack-expert",
+  "version": "0.1.0",
+  "description": "Expert level of pstack: everything in the practitioner level, plus the Refactoring, Perf issue, Hillclimb, Autonomous run, Session pickup, Pause safely, Eval, and Authoring a skill playbooks, the benchmark-checklist, show-me-your-work, figure-it-out, and correct skills, and their 19 principles.",
+  "author": {
+    "name": "DevTK0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop"
+  ]
+}

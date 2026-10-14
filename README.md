@@ -8,6 +8,7 @@ The plugins are levels of a course built on [pstack](https://github.com/cursor/p
 |---|---|---|---|---|
 | 1 | `pstack-starter` | 4 | 9 | 17 |
 | 2 | `pstack-practitioner` | 7 | 13 | 17 |
+| 3 | `pstack-expert` | 15 | 17 | 19 |
 
 ## Level 1: pstack-starter
 
@@ -56,6 +57,34 @@ Principles added: none. The new playbooks and skills cite only principles level 
 
 Invoke it with `/pstack` in Claude Code. In Codex it is `$pstack-practitioner:pstack`.
 
+## Level 3: pstack-expert
+
+Everything in level 2, plus refactoring, performance work, long-running work you can leave and audit later, and writing your own skills.
+
+Playbooks added:
+
+| Playbook | Use it for |
+|---|---|
+| Refactoring | A behavior-preserving change to structure or shape. |
+| Perf issue | A measured slowness to trace and improve against a baseline. |
+| Hillclimb | Sustained improvement of one metric against a target. |
+| Autonomous run | Driving a long task to completion without stopping. |
+| Session pickup | Resuming a prior agent's in-flight work. |
+| Pause safely | Suspending work cleanly so it can be resumed. |
+| Eval | Testing how a skill or prompt change affects agent behavior. |
+| Authoring or modifying a skill | Writing or editing a SKILL.md. |
+
+Skills added:
+
+- `benchmark-checklist`, which vets a performance number before you trust or report it. Perf issue and Hillclimb use it.
+- `show-me-your-work`, which keeps a decision log for work you review after stepping away. Autonomous run and Hillclimb use it. Levels 1 and 2 carry a short inline version in `/pstack` instead.
+- `figure-it-out`, which designs a bespoke playbook for large work, and for any task no other playbook fits.
+- `correct`, which finds mistakes agents keep repeating in a repo and makes each one impossible with architecture, types, a lint, or a test.
+
+Principles added: Migrate Callers Then Delete Legacy APIs, which Refactoring cites, and Never Block on the Human, which `figure-it-out` cites.
+
+Invoke it with `/pstack` in Claude Code. In Codex it is `$pstack-expert:pstack`.
+
 ## Install
 
 Install one level at a time. To move up, uninstall the current level, then install the next.
@@ -68,6 +97,9 @@ claude plugin install pstack-starter@aixtech-skills
 # next level
 claude plugin uninstall pstack-starter@aixtech-skills
 claude plugin install pstack-practitioner@aixtech-skills
+# next level
+claude plugin uninstall pstack-practitioner@aixtech-skills
+claude plugin install pstack-expert@aixtech-skills
 ```
 
 Codex:
@@ -78,6 +110,9 @@ codex plugin add pstack-starter@aixtech-skills
 # next level
 codex plugin remove pstack-starter@aixtech-skills
 codex plugin add pstack-practitioner@aixtech-skills
+# next level
+codex plugin remove pstack-practitioner@aixtech-skills
+codex plugin add pstack-expert@aixtech-skills
 ```
 
 Any other harness: copy or symlink every directory under one plugin's `skills/` folder into the harness's skills directory. Keep them as siblings, because `pstack` reads the other skills and the principles at `../<name>/SKILL.md`.
