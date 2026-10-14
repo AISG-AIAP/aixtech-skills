@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Interrogate
 
-Spawn one reviewer per model to adversarially review code changes. The adversarial signal comes from model diversity, not assigned personas. The deliverable is a synthesized verdict. Do NOT auto-apply changes.
+Spawn one reviewer per model to adversarially review code changes. The adversarial signal comes from independent reviewers, not assigned personas. The deliverable is a synthesized verdict. Do NOT auto-apply changes.
 
 ## Step 1, Scope
 
@@ -24,7 +24,7 @@ Before spawning reviewers, state the intent in one clear paragraph from the user
 
 ## Step 3, Spawn Reviewers
 
-Launch all reviewers at once as read-only subagents, labeled Reviewer A, B, and so on. Default to two: Reviewer A on your strongest judgment model and Reviewer B on a model from a different family. Add a reviewer for each further model family the harness can reach. When the harness offers only one model, run two reviewers on it and say in the verdict that the diversity signal is weaker.
+Launch all reviewers at once as read-only subagents, labeled Reviewer A, B, and so on. Default to two: Reviewer A on your strongest judgment model and Reviewer B preferably from a different model family.
 
 Read `references/reviewer-prompt.md` and fill in the same template for every reviewer with the stated intent, the diff or file contents, the rubric from `references/rubric.md`, and the code-quality lens from `references/code-quality-review.md`.
 
