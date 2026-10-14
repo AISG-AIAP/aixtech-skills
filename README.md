@@ -2,36 +2,63 @@
 
 Agent skills for aixtech, at <https://github.com/AISG-AIAP/aixtech-skills>. The repo is a plugin marketplace for Claude Code and Codex. Each plugin's `skills/` directory also works in any harness that reads Agent Skills.
 
-| Plugin | Contents |
+The plugins are levels of a course built on [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan, ported from upstream commit `1dcc2ba` to work in any harness. Each level contains everything in the level before it. Every level has one entry point, `/pstack`, which routes each task to a playbook and grounds every decision in the principles.
+
+| Level | Plugin | Playbooks | Skills | Principles |
+|---|---|---|---|---|
+| 1 | `pstack-starter` | 4 | 9 | 17 |
+| 2 | `pstack-practitioner` | 7 | 13 | 17 |
+
+## Level 1: pstack-starter
+
+Build a feature and get it merged.
+
+Playbooks:
+
+| Playbook | Use it for |
 |---|---|
-| `pstack-starter` | `/pstack` with the Feature, Babysit, Shipping, and Opening a PR playbooks, the `how`, `why`, `architect`, `arena`, and `interrogate` skills Feature uses, the `technical-writing` and `/blast-radius` skills Opening a PR uses, the `/teach` and `/unslop` skills, and the 17 principles they need. The first level of the course. |
-| `pstack-practitioner` | Everything in `pstack-starter`, plus the Investigation, Bug fix, and Prototype playbooks, the `tdd` skill, and the `/create-verification-skill` and `/maintain-verification-skill` skills. The second level. |
+| Feature | New or changed behavior, built from a named data shape. |
+| Opening a PR | Committing, writing the PR, and opening it. Every other playbook ends here. |
+| Babysit | Driving a PR or a stack to merge-ready: conflicts, review threads, CI. |
+| Shipping | Independently verifying a green stack, then landing it bottom-up through `gh`. |
 
-## pstack-starter
+Skills:
 
-`pstack-starter` is a harness-agnostic port of part of [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan, taken from upstream commit `1dcc2ba`.
+- `pstack`, the entry point.
+- `how`, `why`, `architect`, `arena`, and `interrogate`, which Feature uses. `why` searches git history, pull requests, and GitHub Issues.
+- `technical-writing` and `blast-radius`, which Opening a PR uses.
+- `unslop`, which cuts AI tells from writing.
 
-- `plugins/pstack-starter/skills/pstack` is the single entry point, upstream's `/poteto-mode` renamed and trimmed to this level. It routes each task to a playbook in `skills/pstack/playbooks/` and grounds every decision in the principles.
-- `plugins/pstack-starter/skills/how`, `why`, `architect`, `arena`, and `interrogate` are the skills the Feature playbook uses. `why` searches git history, pull requests, and GitHub Issues.
-- `plugins/pstack-starter/skills/teach` explains a body of work so a person understands it. Invoke it with `/teach`.
-- `plugins/pstack-starter/skills/unslop` cuts AI tells from writing. `/pstack` and `/teach` write through it, and you can invoke it with `/unslop`.
-- `plugins/pstack-starter/skills/principle-*` holds the 17 principles those skills and playbooks cite.
+Principles: the 17 that these skills and playbooks cite. Boundary Discipline, Build the Lever, Encode Lessons in Structure, Exhaust the Design Space, Fix Root Causes, Foundational Thinking, Guard the Context Window, Laziness Protocol, Make Operations Idempotent, Minimize Reader Load, Model the Domain, Outcome-Oriented Execution, Prove It Works, Redesign from First Principles, Separate Before Serializing Shared State, Sequence Work into Verifiable Units, and Subtract Before You Add.
 
 Invoke it with `/pstack` in Claude Code (`/pstack-starter:pstack` also works). Codex prefixes plugin skills with the plugin name, so there it is `$pstack-starter:pstack`.
 
-## pstack-practitioner
+## Level 2: pstack-practitioner
 
-`pstack-practitioner` contains everything in `pstack-starter` and adds:
+Everything in level 1, plus understanding code, fixing bugs, and prototyping against the running app.
 
-- The Bug fix and Prototype playbooks. Both drive the app through the project's verification skill.
-- The Investigation playbook, for read-only questions answered from `how` and `why` with citations.
+Playbooks added:
+
+| Playbook | Use it for |
+|---|---|
+| Investigation | Read-only questions: how does X work, why was Y built this way, should we do X or Y. |
+| Bug fix | A reported defect to reproduce, root-cause, and fix with runtime evidence. |
+| Prototype | A throwaway sketch to settle a design or behavior question by observing it. |
+
+Skills added:
+
+- `teach`, which explains a body of work as an HTML page, at the learner's pace. It uses `how` and `why`, like Investigation.
 - `tdd`, which Bug fix uses to land a failing test before the fix when the test is cheap.
-- `create-verification-skill`, which writes a project-local skill at `.agents/skills/verify-<app>/` that launches the app, drives it the way a user does, and captures evidence.
+- `create-verification-skill`, which writes a project-local skill at `.agents/skills/verify-<app>/` that launches the app, drives it the way a user does, and captures evidence. Bug fix and Prototype drive the app through it.
 - `maintain-verification-skill`, which audits that skill and its feature map against the current app.
+
+Principles added: none. The new playbooks and skills cite only principles level 1 already has.
 
 Invoke it with `/pstack` in Claude Code. In Codex it is `$pstack-practitioner:pstack`.
 
 ## Install
+
+Install one level at a time. To move up, uninstall the current level, then install the next.
 
 Claude Code:
 
