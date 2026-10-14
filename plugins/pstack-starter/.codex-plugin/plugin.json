@@ -1,7 +1,7 @@
 {
   "name": "pstack-starter",
   "version": "0.1.0",
-  "description": "Starter level of pstack: the /pstack entry point with the Feature, Babysit, Shipping, and Opening a PR playbooks, the how, why, architect, arena, interrogate, technical-writing, and blast-radius skills they use, the teach and unslop skills, and their 17 principles.",
+  "description": "Starter level of pstack: the /pstack entry point with the Feature, Babysit, Shipping, and Opening a PR playbooks, the how, why, architect, arena, interrogate, technical-writing, and blast-radius skills they use, the unslop skill, and their 17 principles.",
   "author": {
     "name": "DevTK0"
   },
