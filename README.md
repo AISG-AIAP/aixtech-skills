@@ -8,7 +8,7 @@ The plugins are levels of a course built on [pstack](https://github.com/cursor/p
 |---|---|---|---|---|
 | 1 | `pstack-starter` | 4 | 9 | 17 |
 | 2 | `pstack-practitioner` | 7 | 13 | 17 |
-| 3 | `pstack-expert` | 15 | 17 | 19 |
+| 3 | `pstack-expert` | 13 | 17 | 19 |
 
 ## Level 1: pstack-starter
 
@@ -69,8 +69,6 @@ Playbooks added:
 | Perf issue | A measured slowness to trace and improve against a baseline. |
 | Hillclimb | Sustained improvement of one metric against a target. |
 | Autonomous run | Driving a long task to completion without stopping. |
-| Session pickup | Resuming a prior agent's in-flight work. |
-| Pause safely | Suspending work cleanly so it can be resumed. |
 | Eval | Testing how a skill or prompt change affects agent behavior. |
 | Authoring or modifying a skill | Writing or editing a SKILL.md. |
 
